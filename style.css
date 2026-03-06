@@ -2,10 +2,14 @@
 ================================================================================ */
 
 :root {
-  --head-color: red;
-  --main-color: blue;
-  --side-color: yellow;
-  --foot-color: green;
+  --bg-primary-clr: white;
+  --bg-secondary-clr: #bef0b1;
+  --bg-highlight-clr: #f0b1e2;
+  --txt-primary-clr: black;
+  --txt-secondary-clr: darkslategray;
+
+  --pad-amount: 1rem;
+  --bord-radius: 0.5rem;
 }
 
 /* General Layout
@@ -29,58 +33,72 @@ body {
     "foot";
 }
 
-@media screen and (max-width: 767px) {
-  aside {
-    display: none;
-  }
-}
-
-/* Other screen sizes (Bootstrap breakpoints): */
-@media screen and (min-width: 768px) {
-  body {
-    grid-template: auto 1fr auto / auto 1fr;
-    grid-template-areas:
-      "head head"
-      "side main"
-      "foot foot";
-  }
-
-  aside {
-    display: flex;
-    flex-direction: column;
-  }
-}
-/* IDK what to make different about XL lol */
-/* @media screen and (min-width: 1200px) {
-  body {
-  }
-} */
-
 /* Header
 ================================================================================ */
 
 header {
-  background-color: var(--head-color);
+  background-color: var(--bg-secondary-clr);
+  padding: var(--pad-amount);
+
   grid-area: head;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+h1 {
+  padding: var(--pad-amount);
+}
+
+nav {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.btn {
+  padding: var(--pad-amount);
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--txt-primary-clr);
+
+  border-radius: var(--bord-radius);
+  background: #bef0b1;
+  box-shadow:
+    5px 5px 10px #a3ce98,
+    -5px -5px 10px #d9ffca;
+}
+
+.btn:active {
+  background: #bef0b1;
+  box-shadow:
+    inset 5px 5px 10px #a3ce98,
+    inset -5px -5px 10px #d9ffca;
 }
 
 /* Main & Sidebar
 ================================================================================ */
 
 main {
-  background-color: var(--main-color);
+  background-color: var(--bg-primary-clr);
   grid-area: main;
-}
-
-aside {
-  background-color: var(--side-color);
-  grid-area: side;
 }
 
 /* Footer
 ================================================================================ */
 
 footer {
-  background-color: var(--foot-color);
+  background-color: var(--bg-secondary-clr);
   grid-area: foot;
+}
+
+/* Media Queries
+================================================================================ */
+
+/* Other screen sizes (Bootstrap breakpoints): */
+@media screen and (min-width: 768px) {
 }
