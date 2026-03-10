@@ -8,7 +8,7 @@
   --txt-color1: black;
   --txt-color2: #333b16;
 
-  --pad1: 1rem;
+  --pad1: 0.5rem;
   --pad2: 2rem;
   --btn-pad: 0.5rem;
   --btn-radius: 0.5rem;
@@ -41,7 +41,7 @@ body {
     "main"
     "foot";
 
-  background-color: var(--color2);
+  background-color: var(--color1);
 }
 
 /* Header
@@ -154,13 +154,13 @@ footer {
   box-shadow:
     32px 32px 64px #848484,
     -32px -32px 64px #ffffff; */
-  /* box-shadow:
-    32px 32px 64px #8e8d7e,
-    -32px -32px 64px #ffffff; */
-  /* background: linear-gradient(145deg, #b8d9ef, #9bb7c9); */
   box-shadow:
+    32px 32px 64px #8e8d7e,
+    -32px -32px 64px #ffffff;
+  /* background: linear-gradient(145deg, #b8d9ef, #9bb7c9); */
+  /* box-shadow:
     22px 22px 44px #849cac,
-    -22px -22px 44px #d4faff;
+    -22px -22px 44px #d4faff; */
 }
 
 .typewriter-container {
