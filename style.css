@@ -127,7 +127,7 @@ footer {
 .n-block {
   margin: 0 auto;
   margin-top: 2rem;
-  max-width: 20rem;
+  max-width: 75%;
   padding: var(--pad2);
   border-radius: var(--block-radius);
   box-shadow:
