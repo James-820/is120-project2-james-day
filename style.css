@@ -23,7 +23,8 @@
   margin: 0;
   padding: 0;
 
-  font-family: "SN Pro", sans-serif;
+  /* font-family: "SN Pro", sans-serif; */
+  font-family: monospace, sans-serif;
 }
 
 /* Mobile-first layout: */
@@ -40,7 +41,7 @@ body {
     "main"
     "foot";
 
-  background-color: var(--color1);
+  background-color: var(--color2);
 }
 
 /* Header
@@ -64,11 +65,15 @@ header {
 }
 
 h1 {
-  padding-top: var(--pad1);
-  padding-bottom: var(--pad1);
+  --num-chars: 9;
+  --anim-time: 1.5s;
+
+  /* padding-top: var(--pad1);
+  padding-bottom: var(--pad1); */
   font-size: 3rem;
   /* width: 100%; */
   color: var(--txt-color2);
+  font-weight: bold;
 }
 
 nav {
@@ -103,6 +108,21 @@ section {
   align-items: center;
 }
 
+#contact h2 {
+  --num-chars: 10;
+  --anim-time: 2s;
+}
+
+#skills h2 {
+  --num-chars: 9;
+  --anim-time: 3s;
+}
+
+#about h2 {
+  --num-chars: 8;
+  --anim-time: 5s;
+}
+
 /* Footer
 ================================================================================ */
 
@@ -130,9 +150,32 @@ footer {
   max-width: 75%;
   padding: var(--pad2);
   border-radius: var(--block-radius);
+  /* background-color: var(--color3);
   box-shadow:
     32px 32px 64px #848484,
-    -32px -32px 64px #ffffff;
+    -32px -32px 64px #ffffff; */
+  /* box-shadow:
+    32px 32px 64px #8e8d7e,
+    -32px -32px 64px #ffffff; */
+  /* background: linear-gradient(145deg, #b8d9ef, #9bb7c9); */
+  box-shadow:
+    22px 22px 44px #849cac,
+    -22px -22px 44px #d4faff;
+}
+
+.typewriter-container {
+  margin-top: var(--pad1);
+  margin-bottom: var(--pad1);
+}
+
+.typewriter {
+  margin-inline: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid;
+  animation:
+    typing var(--anim-time) steps(var(--num-chars)) forwards,
+    blink 1s step-end infinite;
 }
 
 /* Media Queries
@@ -147,3 +190,18 @@ footer {
 
 /* Animations/Keyframes
 ================================================================================ */
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
