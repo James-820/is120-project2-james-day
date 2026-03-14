@@ -2,10 +2,10 @@
 ================================================================================ */
 
 :root {
-  --color1: #e0e0e0;
+  --color1: #f2f2f2;
   --color2: #accbdf;
   --color3: #f1efd5;
-  --txt-color1: black;
+  --txt-color1: #170312;
   --txt-color2: #333b16;
 
   --pad1: 0.5rem;
@@ -120,7 +120,15 @@ section {
 
 #about h2 {
   --num-chars: 8;
-  --anim-time: 5s;
+  --anim-time: 2.5s;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  margin-top: 1rem;
 }
 
 /* Footer
@@ -144,6 +152,11 @@ footer {
   font-weight: bold;
 }
 
+.btn:active {
+  background-color: var(--color2);
+  color: var(--txt-color2);
+}
+
 .n-block {
   margin: 0 auto;
   margin-top: 2rem;
@@ -154,28 +167,67 @@ footer {
   box-shadow:
     32px 32px 64px #848484,
     -32px -32px 64px #ffffff; */
-  box-shadow:
+  /* box-shadow:
     32px 32px 64px #8e8d7e,
-    -32px -32px 64px #ffffff;
+    -32px -32px 64px #ffffff; */
   /* background: linear-gradient(145deg, #b8d9ef, #9bb7c9); */
   /* box-shadow:
     22px 22px 44px #849cac,
     -22px -22px 44px #d4faff; */
+  box-shadow:
+    5px 5px 10px #b9b9b9,
+    -5px -5px 10px #ffffff;
 }
 
 .typewriter-container {
   margin-top: var(--pad1);
-  margin-bottom: var(--pad1);
+  /* margin-bottom: var(--pad1); */
+  margin-bottom: 2rem;
 }
 
 .typewriter {
+  --iter-count: 20;
+
   margin-inline: auto;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 3px solid;
-  animation:
+  /* border-right: 3px transparent; */
+  /* border-color: transparent; */
+  /* animation:
     typing var(--anim-time) steps(var(--num-chars)) forwards,
-    blink 1s step-end infinite;
+    blink 1s step-end var(--iter-count); */
+  animation: typing var(--anim-time) steps(var(--num-chars)) forwards;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  row-gap: 1.5rem;
+}
+
+#contact h3 {
+  font-size: 1.5rem;
+
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+/* #contact a {
+  text-decoration: none;
+  color: var(--txt-color2);
+} */
+
+#skills img {
+  padding: 1rem;
+}
+
+#about img {
+  padding: 1rem;
 }
 
 /* Media Queries
@@ -183,25 +235,43 @@ footer {
 
 /* Things for larger screens:
 - Button hover effects
-- */
+- Contact info section next to (to the right of) profile pfc section*/
 
 /* Other screen sizes (Bootstrap breakpoints): */
-/* @media screen and (min-width: 768px) {} */
+@media screen and (min-width: 768px) {
+  .contact-container {
+    /* flex-direction: row; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  nav {
+    justify-content: center;
+    column-gap: 2rem;
+  }
+}
 
 /* Animations/Keyframes
 ================================================================================ */
 
 @keyframes typing {
-  from {
+  0% {
+    border-right: 3px solid;
     width: 0;
   }
-  to {
+  99% {
+    border-right: 3px solid;
+  }
+  100% {
+    border-right: transparent;
     width: 100%;
   }
 }
 
 @keyframes blink {
   50% {
-    border-color: transparent;
+    /* border-color: transparent; */
+    /* border-right: 3px solid; */
   }
 }
